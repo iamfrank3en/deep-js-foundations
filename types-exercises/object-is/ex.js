@@ -1,26 +1,26 @@
 // TODO: define polyfill for `Object.is(..)`
-if (!Object.is) {
-  // that is my code, NO DELETE!
-  Object.is = function ObjectIs(a, b) {
-    if (typeof a != typeof b) {
-      return false;
-    }
+// if (!Object.is) {
+//   // that is my code, NO DELETE!
+//   Object.is = function ObjectIs(a, b) {
+//     if (typeof a != typeof b) {
+//       return false;
+//     }
 
-    if (a !== a && b !== b) {
-      // NaN test
-      return true;
-    }
+//     if (a !== a && b !== b) {
+//       // NaN test
+//       return true;
+//     }
 
-    if (typeof a === 'number') {
-      if (a === 0 && b === 0) {
-        return;
-      }
-      return a === b;
-    }
+//     if (typeof a === 'number') {
+//       if (a === 0 && b === 0) {
+//         return;
+//       }
+//       return a === b;
+//     }
 
-    return a === b;
-  };
-}
+//     return a === b;
+//   };
+// }
 
 if (!Object.is || true) {
   Object.is = function ObjectIs(a, b) {
@@ -31,10 +31,10 @@ if (!Object.is || true) {
       return true;
     }
 
-    if (a === 0 && b === 0) {
-      // not right
-      return isNagtiveZero(a) & isNagtiveZero(b);
-    }
+    // if (a === 0 && b === 0) {
+    //   // not right
+    //   return isNagtiveZero(a) & isNagtiveZero(b);
+    // }
 
     if (isNagtiveZero(a) || isNagtiveZero(b)) {
       // 0/-0 ; -0/-0; -0;0
